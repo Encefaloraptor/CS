@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+  <head>
+    <th:block th:insert="~{fragments::cabecera}"></th:block>
+  </head>
+  <body>
+    <th:block th:insert="~{fragments::menu}"></th:block>
+    <h1>Palmares</h1>
+    <h2>Torneos nacionales</h2>
+    <th:block th:each="elemento:${palmares}">
+      <p th:text="${elemento}"></p>
+    </th:block>
+  </body>
+</html>

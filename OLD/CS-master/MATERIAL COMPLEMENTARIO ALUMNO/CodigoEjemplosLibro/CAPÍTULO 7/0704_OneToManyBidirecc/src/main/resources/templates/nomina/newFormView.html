@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Relaciones OneToMany-bidirec</title>
+	</head>
+  <body>
+    <h1>Nueva nómina</h1>
+    <form method="post" action="#" th:action="@{/nominas/new/submit}"
+            th:object="${nominaForm}">
+            <label>Id: ---solo lectura---<input type="text" readonly id="id" th:field="*{id}" /> </label><br/>
+            <label>Fecha:<input type="text" id="fechaNomina" th:field="*{fechaNomina}" /></label><br/>
+            <label>importeBruto:<input type="text" id="importeBruto" th:field="*{importeBruto}" /></label><br/>
+            <label>porcentImpuestos:<input type="text" id="porcentImpuestos" th:field="*{porcentImpuestos}" /></label><br/>
+            <label>importeNeto:<input type="text" id="importeNeto" th:field="*{importeNeto}" /></label><br/>
+            Empleado:<br/>     
+            <select name="list1" th:field="*{empleado}"> 
+              <option th:each="empleado:${listaEmpleados}" 
+                      th:value="${empleado.id}" th:text="${empleado.nombre}">
+              </option>
+              </select>
+            <br/>
+            <input type="submit" value="Enviar" />
+    </form>
+      </div>
+    </div>
+  </body>
+</html>

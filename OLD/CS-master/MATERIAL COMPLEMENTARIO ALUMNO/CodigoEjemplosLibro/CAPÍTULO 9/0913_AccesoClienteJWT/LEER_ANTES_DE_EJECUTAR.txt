@@ -1,0 +1,5 @@
+A diferencia del resto de proyectos de este libro, esta carpeta no contiene una aplicación de servidor,
+es un cliente que consume los endpoints del proyecto servidor "0912_ProyApiRestConJWT".
+
+Para probarlo entonces, hay que ejecutar el proyecto de lan carpeta "0912_ProyApiRestConJWT" y luego
+abrir desde un navegador, el archivo index.html de esta carpeta 

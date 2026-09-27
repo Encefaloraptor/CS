@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <th:block th:insert="~{index.html :: menu}"></th:block>
+
+    <p th:each="producto : ${listaTitulos}">
+      <span th:text="${producto}">titulo por defecto</span>
+    </p>
+
+    
+
+    <h2>🏆 Títulos regionales</h2>
+    <ul>
+      <li>
+        Campeonato de Galicia (7): 1923/24, 1924/25, 1925/26, 1927/28, 1929/30,
+        1931/32, 1932/33
+      </li>
+    </ul>
+
+    <h2>⚔️ Logros destacados</h2>
+    <ul>
+      <li>Finalista de Copa del Rey (3): 1948, 1994, 2001</li>
+      <li>Semifinalista de Europa League (1): 2016/17</li>
+      <li>Clasificación a Champions League (1): 2003/04 (fase de grupos)</li>
+    </ul>
+  </body>
+</html>

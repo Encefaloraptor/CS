@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/styles.css"> 
+  <title>Lista de Empleados</title>
+</head>
+<body>
+  <h1>Lista de Empleados</h1>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Salario</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody id="tablaEmpleadosBody"></tbody>
+  </table>
+  <button type="button" id="nuevoEmpleadoBtn"> Nuevo Empleado</button> 
+  
+ 
+  <div id="modalForm" class="modal">
+    <div class="modal-content">
+        <form id="myForm">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required>
+            <br/>
+            <label for="email">Email:</label>
+            <input type="text" id="email" required>
+            <br/>
+            <label for="salario">Salario:</label>
+            <input type="text" id="salario" required>
+            <br/>
+            <button type="button" id="okBtn">Aceptar</button>
+            <button type="button" id="cancelBtn">Cancelar</button>
+        </form>
+    </div>
+</div>
+  <script defer src="./js/api.js"></script>
+  <script defer src="./js/crud.js"></script>
+  <script> document.addEventListener('DOMContentLoaded', function () { init(); });</script> 
+</body>
+</html>
+
+

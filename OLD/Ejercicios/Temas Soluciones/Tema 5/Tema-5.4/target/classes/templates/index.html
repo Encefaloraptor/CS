@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+    <head>
+      <th:block th:insert="~{fragments::cabecera}"></th:block>
+    </head>
+    <body>
+      <th:block th:insert="~{fragments::menu}"></th:block>
+      <h1 th:text="${team}">equipo</h1>
+      
+      <p th:text="${date}"></p>
+      <a href="http://localhost:8080?nombre=Ruben">Link Cambiar Nombre</a>
+    </body>
+  </html>
+</html>

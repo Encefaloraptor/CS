@@ -1,0 +1,5 @@
+1.- Lanzar Eureka Server (proyecto 101601_ServiceRegistryEureka)
+2.- Lanzar Gateway  (proyecto 101602_ApiCloudGateway) 
+3.- Lanzar microservicio /productos (proyecto 101603_MicroServicio)
+En navegador: http://localhost:8090/productos/
+8090 es el puerto del Gateway, no del microserviio

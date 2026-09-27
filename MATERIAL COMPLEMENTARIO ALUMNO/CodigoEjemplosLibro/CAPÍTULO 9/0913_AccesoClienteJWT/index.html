@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta datos con JWT</title>
+</head>
+<body>
+    <form id=" loginForm">
+    <label for="usuario">Usuario:</label>
+    <input type="text" id="usuario" required>
+    <br />
+    <label for="contraseña">Contraseña:</label>
+    <input type="text" id="contraseña" required>
+    <br />
+    <button type="button" id="okBtn">Aceptar</button><br/>
+	<i>Hay un usuario creado de tipo administrador: admin con contraseña 1234</i>
+    <hr>
+    <br/>
+    </form>
+  </div>
+  <button type="button" id="getAdminDataBtn"> Obtener datos de Administrador</button><br/>
+  <button type="button" id="getManagerDataBtn"> Obtener datos de Manager</button><br/>
+  <button type="button" id="getUserDataBtn"> Obtener datos de Usuario</button><br/>
+  <button type="button" id="getPublicDataBtn"> Obtener datos públicos</button><br/>
+  <h1 id="serverData"></h1>
+  <script defer src="./js/api.js"></script>
+  <script defer src="./js/main.js"></script>
+  <script> document.addEventListener('DOMContentLoaded', function () { init(); });</script>
+</body>
+
+</html>

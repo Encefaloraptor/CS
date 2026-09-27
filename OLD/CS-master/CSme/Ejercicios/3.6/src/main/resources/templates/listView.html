@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head th:fragment="cabecera"> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/estilos.css" rel="stylesheet" type="text/css" />
+    <title>Ejemplo Vista Controlador</title>
+  </head>
+  <body>
+        <h1>Listado de numeros aleatorios</h1>
+        <table th:if="${ocultar}" border="1px">
+          <thead><tr><th>Numero</th><th>Operación</th></tr></thead>
+          <tbody>
+        	 <tr th:each="numero : ${listaNumeros}">
+        	    <td  th:text="${numero}" th:class="${numero < 50} ? 'menor' : 'mayor'" >33</td>
+              <td><a th:href="@{/delete/{id}(id=${numero})}">delete</a></td>        		
+             </tr>
+          </tbody>
+        </table>
+        Total números: <span th:text="${cantidadTotal}">0</span><br/>
+        <a th:href="@{/new}">Nuevo número</a><br/>
+  </body>
+</html>

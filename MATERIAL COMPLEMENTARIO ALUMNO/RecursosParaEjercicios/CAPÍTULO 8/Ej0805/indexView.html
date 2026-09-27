@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      .light {background-color: white; color: black; }
+      .dark { background-color: darkgray; color: white; }
+  </style>
+  <title>Gestión de cookies</title>
+</head>
+<body th:class="${tema}">
+    <h1>Listado de productos</h1>
+    <table>
+      <thead><tr><th>ID</th><th>Nombre</th><th>Precio</th></tr>
+      </thead>
+      <tbody>
+        <tr th:each="producto : ${listaProductos}">
+          <td th:text="${producto.id}">Id</td>
+          <td th:text="${producto.nombre}">nombre</td>
+          <td th:text="${producto.precio}">0</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Los precios se muestran en: <span th:text="${moneda}">Moneda Actual</span></p>
+    Cambio de moneda: 
+    <a th:href="@{/setMoneda/EUR}">EURO</a>
+    <a th:href="@{/setMoneda/GBP}">LIBRA</a>
+    <a th:href="@{/setMoneda/USD}">DOLAR</a><br/><br/> 
+    <p>El tema actual es: <span th:text="${tema}"></span></p>
+    Cambio de tema:    
+    <a th:href="@{/setTema/light}">Cambiar a Tema Claro</a>
+    <a th:href="@{/setTema/dark}">Cambiar a Tema Oscuro</a><br/><br/> 
+    
+</body>
+</html>
+

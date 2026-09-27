@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fragmentos</title>
+</head>
+<body>
+    <th:block th:fragment="menu">
+    <nav>
+      <a class="nav-link-active" th:href="@{/}">Inicio</a> |
+      <a class="nav-link-active" th:href="@{/informacion/titulos}">Títulos</a> |
+      <a class="nav-link-active" th:href="@{/informacion/referencias}">Enlaces</a> |
+      <a class="nav-link-active" th:href="@{/informacion/galeria}">Galería</a>
+    </nav>
+  </th:block>
+</body>
+</html>

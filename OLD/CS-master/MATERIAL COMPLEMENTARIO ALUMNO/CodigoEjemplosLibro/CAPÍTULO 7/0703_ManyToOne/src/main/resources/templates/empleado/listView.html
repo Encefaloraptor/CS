@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Relaciones ManyToOne</title>
+  </head>
+  <body>
+          <h1>Listado de empleados</h1>
+          Departamento:
+          <select id="selectDepto" onChange="changeDepartamento();">
+              <option value="0">Todos</option>
+              <option th:each="dep : ${listaDepartamentos}" 
+                  th:value="${dep.id}" th:text="${dep.nombre}"
+                  th:selected="${dep.id} == ${deptoSeleccionado} ? true : false">
+              </option>
+          </select>
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th><th>Nombre</th><th>Email</th><th>Salario</th>
+                <th>Activo</th><th>Género</th><th>Depto</th><th>Editar</th><th>Borrar</th></tr>
+            </thead>
+            <tbody>
+              <tr th:each="empleado : ${listaEmpleados}">
+                <td th:text="${empleado.id}">Id</td>
+                <td><a th:href="@{/{id}(id=${empleado.id})}" th:text="${empleado.nombre}">nombre</a></td>
+                <td th:text="${empleado.email}">email@mail.com</td>
+                <td th:text="${empleado.salario}">0</td>
+                <td th:text="${empleado.enActivo}">bool</td>
+                <td th:text="${empleado.genero}">genero</td>
+                <td th:text="${empleado.departamento.nombre}">dep</td>
+                <td><a th:href="@{/editar/{id}(id=${empleado.id})}">Editar</a></td>        		
+                <td><a th:href="@{/borrar/{id}(id=${empleado.id})}">Borrar</a></td>        		
+              </tr>
+            </tbody>
+          </table>
+          <p  th:if="${msg!=null}">
+            <span th:text="${msg}">err</span>
+          </p>    
+        <a th:href="@{/nuevo}">Nuevo empleado</a><br/><br/>
+        <a href="/depto/">Gestión departamentos</a><br/>      
+
+      <!--------------------------------------------->
+      <script>
+        function changeDepartamento(){
+            const select = document.getElementById("selectDepto");
+            if (select.value == 0) window.location.href = "/";
+            else window.location.href = "/porDepto/"+select.value;
+        }
+      
+        </script>
+        <!--------------------------------------------->
+  </body>
+</html>

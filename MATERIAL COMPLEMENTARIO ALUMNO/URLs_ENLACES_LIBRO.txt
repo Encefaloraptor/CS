@@ -1,0 +1,156 @@
+CAPÍTULO 1:
+
+- Principios SOLID: 		
+  https://devexpert.io/principios-solid/
+
+
+- Lista de reproducción videos del curso:
+  https://www.youtube.com/playlist?list=PLUSxu1SUrJ9h8qfwuXHpOImMGZ0967Bc5
+
+  
+- Otras listas de reproducción videos sobre Spring Framework:
+  https://www.youtube.com/playlist?list=PL5leSwLYapPbUxGbzWf6cb9BLP_TEqRAR
+  https://www.youtube.com/playlist?list=PLRFOqDrY-6nu_k7XrUgIgd5SA3Vg7TiWe
+  https://www.youtube.com/playlist?list=PLcaI8vM1NK3ttWdID2mW9FBp-U-QoEt5K
+  https://www.youtube.com/watch?v=xNZEgVJ_4Q0
+
+
+CAPÍTULO 2:
+
+- Descarga JDK (Oracle):
+  https://www.oracle.com/es/java/technologies/downloads/#jdk21-windows
+
+  
+- Descarga Visual Studio Code:
+  https://code.visualstudio.com/#alt-downloads
+
+  
+- Documentación Visual Studio Code:
+  https://code.visualstudio.com/docs/?dv=win64
+  https://code.visualstudio.com/docs/java/java-tutorial
+  https://code.visualstudio.com/docs/java/java-project#_configure-runtime-for-projects
+
+  
+- Descarga Maven:
+  https://maven.apache.org/download.cgi
+  
+ 
+- Descarga GIT:
+  https://git-scm.com/downloads
+
+  
+- Documentación VSC y GIT:
+  https://programacionfacil.org/blog/como-utilizar-git-desde-visual-studio-code/
+  
+  
+- Spring Initializer:
+  https://start.spring.io/  
+  
+ 
+- Descarga Netbeans:
+  https://netbeans.apache.org/front/main/index.html
+  
+  
+CAPÍTULO 5:
+
+- Anotaciones de validación de Jakarta:
+  https://jakarta.ee/specifications/bean-validation/3.0/apidocs/jakarta/validation/constraints/package-summary
+  
+  
+- Contraseñas de aplicación en Google:
+  https://support.google.com/accounts/answer/185833?hl=es
+
+
+CAPÍTULO 6:
+
+- Repositorio Maven:
+  https://mvnrepository.com/  
+  
+  
+- Video solución ejercicio 6.5:
+  https://youtu.be/BJj7VHtHOiw
+  
+
+CAPÍTULO 7:
+
+- Metodos de la interfaz JpaRepository:
+  https://docs.spring.io/spring-data/jpa/docs/current/api/org/springframework/data/jpa/repository/JpaRepository.html
+  
+  
+- Video: subir archivos al servidor:
+  https://www.youtube.com/watch?v=_NjSWG8bs5I
+  
+
+CAPÍTULO 8:
+
+- Video: ataques CSRF:
+  https://www.youtube.com/watch?v=CXSE89JGnek&t=01m13s
+  
+  
+- Funcionalidad: Olvidé mi contraseña:
+  https://stackabuse.com/spring-security-forgot-password-functionality/
+  https://www.baeldung.com/spring-security-registration-i-forgot-my-password#:~:text=Request%20the%20Reset%20of%20Your
+  
+
+CAPÍTULO 9:
+
+- Descarga Postman:
+  https://www.postman.com/downloads/ 
+  
+  
+- Ejemplo Swagger:
+  https://petstore.swagger.io/
+  
+  
+- Anotaciones Swagger:
+  https://github.com/swagger-api/swagger-core/wiki/Swagger-2.X---OpenAPI-3.1  
+  
+  
+- Servicio API "fake":
+  https://jsonplaceholder.typicode.com y
+  
+  
+- Catálogo de APIs públicas:
+  https://github.com/public-apis/public-apis
+  
+  
+- Ejemplos de datasets para procesamiento Big Data:
+  https://www.kaggle.com
+  
+ 
+- API tasas de cambio de moneda:
+  https://api.frankfurter.dev/v1/
+  
+
+CAPÍTULO 10:
+
+- Descarga Apache Tomcat:
+  https://tomcat.apache.org/
+  
+  
+- Descarga MySQL:
+  https://dev.mysql.com/downloads/mysql/
+  
+  
+- Video JUnit:
+  https://www.youtube.com/watch?v=ZOGz_1XtTKc
+  
+  
+- Testing con Spring Boot:
+  https://refactorizando.com/ejemplos-testing-spring-boot/
+  https://www.baeldung.com/spring-boot-testing 
+
+
+- Despliegue de nuestra aplicación en AWS:
+  https://www.youtube.com/watch?v=_vOInY6SRVE
+  https://www.bezkoder.com/deploy-spring-boot-aws-eb/
+
+
+- Más información de Docker:
+  https://www.youtube.com/watch?v=CV_Uf3Dq-EU
+  https://docs.docker.com/desktop/setup/install/windows-install/
+
+
+- Microservicios:
+  Más información: https://www.baeldung.com/spring-cloud-netflix-eureka
+  Ejemplo completo: https://github.com/mcwumbly/spring-boot-eureka-example 

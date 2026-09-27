@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Herencia</title>
+  </head>
+  <body>
+        <h1>Listado de vehiculos (Herencia)</h1>
+        <h3>Listado de coches</h1>
+        <table border="1">
+          <thead><tr>
+              <th>ID</th><th>Modelo</th><th>Precio</th><th>Peso</th></tr>
+          </thead>
+          <tbody>
+            <tr th:each="coche : ${listaCoches}">
+              <td th:text="${coche.id}">3</td>
+              <td th:text="${coche.modelo}">Opel Astra</td>
+              <td th:text="${coche.precio}">34000</td>
+              <td th:text="${coche.peso}">1500</td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>Listado de Motos</h1>
+          <table border="1">
+            <thead><tr>
+                <th>ID</th><th>Modelo</th><th>Precio</th><th>Potencia</th></tr>
+            </thead>
+            <tbody>
+              <tr th:each="moto : ${listaMotos}">
+                <td th:text="${moto.id}">3</td>
+                <td th:text="${moto.modelo}">Opel Astra</td>
+                <td th:text="${moto.precio}">34000</td>
+                <td th:text="${moto.potencia}">90</td>
+              </tr>
+            </tbody>
+          </table>
+  </body>
+</html>

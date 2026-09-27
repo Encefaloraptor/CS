@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head th:replace="~{fragmentos.html::head}"> </head>
+  <body>
+    <h1>El Depor</h1>
+    <p>el mejor equipo desde siempre</p>
+    <p>Bienvenido <span th:text="${nombre}"></span> a nuestra web</p>
+    <div th:replace="~{fragmentos.html::menu}"></div>
+  </body>
+  <footer>
+    <p>©<span th:text="${year}">no funcionó la variable </span></p>
+  </footer>
+</html>

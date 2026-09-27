@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head th:replace="~{fragments.html :: header(Paises)}"></head>
+  <body>
+    <div id="title">Info Paises</div>
+
+    <form method="post" th:action="@{/submit}" th:object="${pais}">
+      <select onchange="this.form.submit()" th:field="*{nombre}">
+        <option value="">Seleccione un pais</option>
+       
+      </select>
+    </form>
+
+    <div th:if="${found}">
+      <div>Capital: <span th:text="${pais.capital}"></span></div>
+      <div>Población: <span th:text="${pais.poblacion}"></span></div>
+    </div>
+
+    <script>
+      document.getElementsByTagName("select")[0].children[0].disabled = true
+    </script>
+  </body>
+</html>

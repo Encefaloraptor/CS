@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Envío de email</title>
+</head> 
+<body>
+<h3>Envío de email</h3>
+<form action="#" enctype="multipart/form-data" method="post" th:action="@{/formsubmit}"
+   th:object="${formInfo}">
+  <label>Nombre: <input type="text" th:field="*{nombre}"/></label><br/>
+  <label>Teléfono: <input type="text" th:field="*{telefono}"/> </label><br/>
+  <label>Asunto: <textarea rows="5" cols="40" th:field="*{asunto}"></textarea></label><br>
+  <label>Adjuntar un fichero:<input type="file" name="file"/></label><br/>
+  <input type="submit" value="Enviar"/>  
+  <em>El envío puede tardar unos segundos, por favor espere.</em>     
+</form>
+<p style="color:red;" th:if="${msg}"><span th:text="${msg}">mensaje</span></p>
+</body>
+</html>

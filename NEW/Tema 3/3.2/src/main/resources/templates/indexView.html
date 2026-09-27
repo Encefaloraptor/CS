@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <html xmlns:th="http://www.thymeleaf.org" />
+    <title>Gatitis</title>
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="/webjars/bootstrap/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <p>En estas páginas veremos gatitos graciososos</p>
+    <menu>
+      <a th:href="@{/home}">Inicio</a>
+      <a th:href="@{/funnycats}">Gatitos graciosos</a>
+      <a th:href="@{/galeria}">Galería de fotos</a>
+      <a th:href="@{/enlaces}">Enlaces</a>
+    </menu>
+    <footer><span th:text="${anno}">año</span></footer>
+  </body>
+</html>

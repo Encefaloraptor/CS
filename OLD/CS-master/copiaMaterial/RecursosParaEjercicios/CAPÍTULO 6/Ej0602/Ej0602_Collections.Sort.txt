@@ -1,0 +1,6 @@
+//Para ordenar un ArrayList por el atributo empleado en el método equals():
+    Collections.sort(arrayAlumnos);
+//Por un campo String (p.ej: nombre):
+    Collections.sort(arrayAlumnos, Comparator.comparing(Alumno::getNombre));
+//Para orden descendente:
+    Collections.sort(arrayAlumnos, Comparator.comparing(Alumno::getNombre, Comparator.reverseOrder()));

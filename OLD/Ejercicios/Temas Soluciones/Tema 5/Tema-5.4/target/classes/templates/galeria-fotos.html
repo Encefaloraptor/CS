@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+  <head>
+    <th:block th:insert="~{fragments::cabecera}"></th:block>
+  </head>
+  <body>
+    <style>
+      img {
+        width: 200px;
+      }
+    </style>
+    <th:block th:insert="~{fragments::menu}"></th:block>
+    <h1>Galería de fotos</h1>
+    <img src="/images.jpg" alt="imagen de iago aspas" />
+    <img src="/Daniel Wass.png" alt="imagen de daniel wass" />
+  </body>
+</html>

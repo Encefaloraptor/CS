@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Títulos y logros - Stan Wawrinka</title>
+</head>
+<body>
+  <h1>Títulos y logros</h1>
+
+   <th:block th:insert="~{fragmentos.html :: menu}"></th:block>
+
+  <br><br>
+  <p th:each="titulo:${listaTitulos}">
+    <span th:text="${titulo}"></span><br>
+  </p>
+
+
+
+
+
+  
+ <!-- <h2>Singles</h2>
+
+  <h3>Grand Slams (3)</h3>
+  <ul>
+    <li>Australian Open — 2014</li>
+    <li>Roland Garros (French Open) — 2015</li>
+    <li>US Open — 2016</li>
+  </ul>
+
+  <h3>Masters 1000 (1)</h3>
+  <ul>
+    <li>Monte-Carlo Rolex Masters — 2014</li>
+  </ul>
+
+  <h3>ATP 500 (3)</h3>
+  <ul>
+    <li>Rotterdam Open — 2015</li>
+    <li>Japan Open (Tokyo) — 2015</li>
+    <li>Dubai Tennis Championships — 2016</li>
+  </ul>
+
+  <h3>ATP 250 (9)</h3>
+  <ul>
+    <li>Croatia Open (Umag) — 2006</li>
+    <li>Grand Prix Hassan II (Casablanca) — 2010</li>
+    <li>Maharashtra Open (Pune) — 2011</li>
+    <li>Portugal Open (Estoril) — 2013</li>
+    <li>Maharashtra Open (Pune) — 2014</li>
+    <li>Maharashtra Open (Pune) — 2015</li>
+    <li>Maharashtra Open (Pune) — 2016</li>
+    <li>Geneva Open — 2016</li>
+    <li>Geneva Open — 2017</li>
+  </ul>
+
+
+
+  <h2>Dobles</h2>
+  <ul>
+    <li>Medalla de oro — Juegos Olímpicos Beijing 2008 (dobles, con Roger Federer)</li>
+    <li>Maharashtra Open (dobles) — 2013 (con Benoît Paire)</li>
+    <li>Swiss Open (dobles) — 2023 (con Dominic Stricker)</li>
+  </ul>
+
+  <h2>Equipo</h2>
+  <ul>
+    <li>Davis Cup — Campeón con Suiza (2014)</li>
+  </ul>
+
+-->
+</body>
+</html>

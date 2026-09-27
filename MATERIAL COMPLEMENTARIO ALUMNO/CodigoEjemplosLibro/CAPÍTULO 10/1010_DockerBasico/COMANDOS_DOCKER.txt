@@ -1,0 +1,19 @@
+##Crear jar (Maven instalado):
+mvn clean package -DskipTests
+
+##Dockerfile:
+FROM eclipse-temurin:21
+ADD target/ejemplo1010-0.0.1-SNAPSHOT.jar /app.jar
+ENTRYPOINT ["java", "-jar", "/app.jar"]
+
+##Crear imagen:
+docker build -t myimage .  
+
+##Lanzar contenedor sobre la imagen creada:
+docker run --name mycontainer -itp 80:9000 myimage
+
+##Probar aplicación (en navegador):
+http://localhost   
+(sin puerto, ya que el puerto host es 80, el puerto por defecto)
+
+

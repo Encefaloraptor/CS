@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relación Muchos a muchos</title> 	
+  </head>
+<body>
+    <h1>Listado de Proyectos</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre
+          <th>Borrar</th>
+          <th>Empleados</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="proyecto : ${listaProyectos}">
+          <td th:text="${proyecto.id}">Id</td>
+          <td th:text="${proyecto.nombre}">nombre</td>
+          <td><a th:href="@{/proy/delete/{id}(id=${proyecto.id})}">Borrar</a></td>
+          <td><a th:href="@{/colaboracion/pro/{id}(id=${proyecto.id})}">Empleados asignados</a></td>
+        </tr>
+      </tbody>
+    </table>
+  <a th:href="@{/proy/new}">Nuevo Proyecto</a><br />
+  
+
+</body>
+
+</html>

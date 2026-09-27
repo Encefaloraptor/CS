@@ -1,0 +1,2 @@
+Esta carpeta incluye código HTML, BootStrap, Java, también iconos y otros recursos 
+que sirven de ayuda para la realización de los ejercicios propuestos.

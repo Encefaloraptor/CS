@@ -1,0 +1,214 @@
+:root {
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --accent: #0d6efd;
+  --muted: #6b7280;
+  --error: #b91c1c;
+}
+
+* {
+  box-sizing: border-box;
+}
+nav,
+nav[th\:fragment="menu"] {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  height: 100%;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+/* Wrapper centra la caja y controla ancho */
+.form-wrapper {
+  width: 100%;
+  max-width: 960px;
+  margin: 20px auto;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+/* Tarjeta del formulario */
+.form-card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 12px 30px rgba(16, 24, 40, 0.08);
+  border: 1px solid rgba(15, 23, 42, 0.04);
+}
+
+/* Cabecera dentro de la tarjeta: título y link alineados */
+.form-header .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.form-header h1 {
+  font-size: 1.25rem;
+  margin: 0;
+  color: #0f172a;
+}
+.home-link {
+  font-size: 0.9rem;
+  color: var(--accent);
+  text-decoration: none;
+  background: rgba(13, 110, 253, 0.08);
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(13, 110, 253, 0.12);
+}
+
+/* Cuerpo del formulario */
+.form-body .row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+/* Columnas: small / large / file / button */
+.col {
+  flex: 1;
+  min-width: 160px;
+}
+.col-small {
+  flex: 0 0 42%;
+} /* nombre y dni algo más pequeños */
+.col-large {
+  flex: 0 0 49%;
+} /* email y dirección casi mitad de pantalla */
+.col-file {
+  flex: 0 0 60%;
+}
+.col-btn {
+  flex: 0 0 38%;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 6px;
+}
+
+/* Labels e inputs */
+label {
+  display: block;
+  font-weight: 600;
+  color: #0f172a;
+  font-size: 0.95rem;
+}
+label input[type="text"],
+label input[type="file"],
+label textarea,
+label select {
+  margin-top: 6px;
+  width: 100%;
+  padding: 9px 10px;
+  border-radius: 8px;
+  border: 1px solid #e6e9ef;
+  background: #fff;
+  font-size: 0.95rem;
+  color: #0f172a;
+}
+label input[type="checkbox"] {
+  margin-left: 10px;
+  transform: translateY(-1px);
+}
+
+/* Opciones centradas */
+.row-center {
+  justify-content: center;
+}
+.options .opt {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 14px;
+  font-weight: 500;
+}
+
+/* Checkbox full line */
+.opt-full {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+/* Botón enviar alineado a la izquierda dentro su columna */
+.btn-submit {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn-submit:hover {
+  background: #0b5ed7;
+}
+
+/* Mensajes de error Thymeleaf */
+.cssError,
+span[th\:errors] {
+  color: var(--error);
+  font-size: 0.9rem;
+  margin-left: 8px;
+  display: inline-block;
+}
+
+/* Responsive: en pantallas pequeñas todo ocupa 100% */
+@media (max-width: 720px) {
+  .col-small,
+  .col-large,
+  .col-file,
+  .col-btn {
+    flex: 1 1 100%;
+  }
+  .form-header .title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .home-link {
+    align-self: flex-start;
+  }
+  .options .opt {
+    margin: 8px;
+  }
+}
+.enviado {
+  display: inline-block;
+  margin-bottom: 0;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  background-color: #d1e7dd;
+  color: #0f5132;
+  border: 1px solid #badbcc;
+  font-weight: 500;
+  line-height: 1.2;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
+}
+.error {
+  display: inline-block;
+  margin-bottom: 0;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  background-color: #e7bfcb;
+  color: #550e0e;
+  border: 1px solid #e7bfcb;
+  font-weight: 500;
+  line-height: 1.2;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
+}

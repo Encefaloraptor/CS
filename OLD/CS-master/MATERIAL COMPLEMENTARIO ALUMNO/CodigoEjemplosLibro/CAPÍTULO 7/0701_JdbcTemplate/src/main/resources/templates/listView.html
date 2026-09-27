@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JDBCTemplate</title>
+  </head>
+  <body>
+          <h1>Listado productos</h1>
+          <table>
+            <thead>
+              <tr><th>ID</th><th>Nombre</th><th>Precio</th><th>Editar</th><th>Borrar</th></tr>
+            </thead>
+            <tbody>
+              <tr th:each="producto : ${productos}">
+                <td th:text="${producto.id}">3</td>
+                <td th:text="${producto.nombre}">Impresora</a></td>
+                <td th:text="${producto.precio}">200.0</td>
+                <td><a th:href="@{/editar/{id}(id=${producto.id})}">Editar</a></td>        		
+                <td><a th:href="@{/borrar/{id}(id=${producto.id})}">Borrar</a></td>        		
+              </tr>
+            </tbody>
+          </table>
+        <a th:href="@{/nuevo}">Nuevo producto</a><br/><br/>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+##Crear jar (Maven instalado):
+mvn clean package -DskipTests
+
+##Dockerfile:
+FROM eclipse-temurin:21
+ADD target/ejemplo1014-0.0.1-SNAPSHOT.jar /app.jar
+ENTRYPOINT ["java", "-jar", "/app.jar"]
+
+## Ver application.properties
+
+##Lanzar contenedores a partir del docker-compose.yml
+docker-compose up -d
+    ##para pararlo emplearemos:
+    docker-compose down
+
+
+##Probar aplicación (en navegador):
+http://localhost   
+(sin puerto, ya que el puerto host es 80, el puerto por defecto)
+

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relación Muchos a muchos</title> 	
+  </head>
+  <body>
+    <h1>Nuevo Proyecto</h1>
+    <form method="post" action="#" th:action="@{/proy/new/submit}" th:object="${proyectoForm}">
+      <label>Id:-solo lectura-<input type="text" readonly  id="id" th:field="*{id}" /> </label><br/>
+      <label>Nombre:<input type="text" id="nombre" th:field="*{nombre}" /></label><br/>
+      <input type="submit" value="Enviar" />
+    </form>
+  </body>
+</html>

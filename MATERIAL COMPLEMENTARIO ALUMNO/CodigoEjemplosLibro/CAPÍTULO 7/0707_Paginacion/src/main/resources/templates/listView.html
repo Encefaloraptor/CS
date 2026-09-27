@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vehiculos paginados</title>
+  </head>
+  <body>
+        <h1>Listado de vehiculos</h1>
+        <h3>Ordenados por modelo</h3>
+        <table border="1">
+          <thead><tr>
+              <th>ID</th><th>Modelo</th><th>Precio</th></tr>
+          </thead>
+          <tbody>
+            <tr th:each="vehiculo : ${listaVehiculos}">
+              <td th:text="${vehiculo.id}">3</td>
+              <td th:text="${vehiculo.modelo}">Opel Astra</td>
+              <td th:text="${vehiculo.precio}">34000</td>
+            </tr>
+          </tbody>
+        </table>
+        <a th:href="@{/?pag=0}">Pág inicial</a>&nbsp;|&nbsp;
+        <a th:href="@{/(pag=${pagAnterior})}">Pág ant</a>&nbsp;|&nbsp;
+       <a th:href="@{/(pag=${pagSiguiente})}">Pág sig</a>&nbsp;|&nbsp;
+       <a th:href="@{/(pag=${pagFinal})}">Utl.pág</a>
+  </body>
+</html>

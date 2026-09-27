@@ -1,0 +1,12 @@
+##Crear volumen para MySQL
+docker volume create mysqlvol
+
+##Crear contenedor independiente con MySQL y BD: mydb
+docker run --name mysqlcontainer -itp 3306:3306 -e MYSQL_ROOT_PASSWORD=1234 -e MYSQL_DATABASE=mydb -d -v mysqlvol:/var/lib/mysql mysql
+
+## Ver application.properties
+
+##En este caso, la aplicación no se conteneriza. Es el servidor MySQL el que está en contenedor.
+##Se ejecuta en la máquina real:
+http://localhost:9000   
+

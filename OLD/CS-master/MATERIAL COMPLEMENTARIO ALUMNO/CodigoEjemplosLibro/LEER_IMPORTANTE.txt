@@ -1,0 +1,22 @@
+Esta carpeta incluye todo el código mostrado en el libro: clases Java, archivos de configuración, páginas HTML, etc.
+
+El código está incluido en proyectos Spring Boot funcionales, por lo que no solo puedes emplearlo en tus proyectos
+si no que también puedes probarlo y verlo en funcionamiento. Para ello debes hacer lo siguiente:
+
+ - Abrir cada proyecto en tu IDE  preferido (Visual Studio Code, Eclipse, IntelliJ, etc.), en el libro se ha empleado Visual Studio Code, pero puede ser cualquier otro. 
+ - Ir a la clase "main" y ejecutar ("Run").
+ - Abrir un navegador con la URL:  http://localhost:9000
+ 
+Las clases Java y los archivos de configuración los encontrarás, en cada proyecto, en la carpeta:
+  \src\main\java\com\example\myapp y subcarpetas
+
+Los archivos HTML los encontrarás en:
+  \src\main\resources\templates
+  
+El archivo pom.xml lo encontrarás en la raíz de cada proyecto.
+
+
+Nota: En el tema 2 se muestran, a modo de repaso, ejemplos de código en Java, no de aplicaciones web, sino de consola, por lo que se cumple 
+      la estructura de carpetas que acabamos de mencionar ni es necesario abrir un navegador para ejecutarlos.
+
+ 

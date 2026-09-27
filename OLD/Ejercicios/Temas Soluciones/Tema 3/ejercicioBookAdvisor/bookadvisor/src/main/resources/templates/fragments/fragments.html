@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<!-- Fragmento para el head -->
+<head th:fragment="head-fragment">
+    <meta charset="UTF-8">
+    <title>BookAdvisory</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<!-- Fragmento para el nav -->
+<body>
+<!-- navbar-expand-lg:La barra será colapse en pantallas pequeñas  navbar-dark:cambia color del texto a claro  bg-dark:fondo oscuro predifinido en bootstrap-->
+<nav th:fragment="nav-fragment" class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!--container-fluid:hace que el contenido ocupe todo el ancho disponible de la pantalla-->
+  <div class="container-fluid">
+    <!--navbar-brand:da estilo especial aun elemento en la barra, lo pone mas grande y con margen a la izquierda-->
+    <a class="navbar-brand" th:href="@{/}">BookAdvisory</a>
+    <!--navbar-toggler:Botón para abrir/cerrar el menú en móviles-->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <!--navbar-toggler-icon: icono de bootstap-->
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!--collapse navbar-collapse: Contenedor que se colapsa en pantallas pequeñas-->
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <!--navbar-nav:Lista de navegación-->
+      <ul class="navbar-nav">
+        <!--nav-item:Elemento individual de navegación-->
+        <li class="nav-item">
+            <!--nav-link:Estilo de los enlaces de navegación-->
+          <a class="nav-link" th:href="@{/}">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/quienes-somos}">Quiénes Somos</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</body>
+</html>

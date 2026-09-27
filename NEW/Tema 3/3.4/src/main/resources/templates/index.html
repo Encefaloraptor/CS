@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3.4</title>
+    <link th:href="@{/CSS/bootstrap.min.css}" rel="stylesheet" />
+  </head>
+  <body class="container py-4">
+    <h1>Listado de números</h1>
+
+    <table
+      class="table table-bordered"
+      th:if="${!#lists.isEmpty(listaNumeros)}">
+      <thead>
+        <tr>
+          <th>Número</th>
+          <th>Operación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="numero : ${listaNumeros}">
+          <td
+            th:text="${numero}"
+            th:class="${numero > 50} ? 'text-success' : 'text-danger'">
+            0
+          </td>
+          <td><a th:href="@{/delete/{id}(id=${numero})}">Delete</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p th:unless="${!#lists.isEmpty(listaNumeros)}">
+      No hay números en la lista.
+    </p>
+
+    <p>Total de números: <span th:text="${cantidadTotal}">0</span></p>
+
+    <a class="btn btn-primary" th:href="@{/new}">Agregar Número</a>
+  </body>
+</html>

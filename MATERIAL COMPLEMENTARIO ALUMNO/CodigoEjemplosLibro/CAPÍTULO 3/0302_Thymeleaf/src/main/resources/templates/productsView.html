@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{/fragmentos.html::cabecera}"></head>
+
+<!-- <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <th:block th:insert="~{fragmentos2.html :: cabecera}"></th:block>
+</head> -->
+
+<body>
+  <p th:each="producto:${listaProd}">
+    <span th:text="${producto}">default product</span>
+  </p>
+</body>
+
+</html>

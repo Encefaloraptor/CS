@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <html xmlns:th="http://www.thymeleaf.org" />
+    <link th:href="@{/CSS/bootstrap.min.css}" rel="stylesheet" />
+    <th:block th:insert="~{fragment.html :: header}"></th:block>
+    <title>Funnny cat images</title>
+  </head>
+  <body>
+    <h1>Galería de Fotos de Gatos Graciosos</h1>
+    <div class="gallery">
+      <img th:src="@{/img/Angy.jpg}" alt="Angy" />
+      <img th:src="@{/img/Washed.jpg}" alt="Washed" />
+      <img th:src="@{/img/Jollycat.jpg}" alt="Jollycat" />
+    </div>
+  </body>
+</html>

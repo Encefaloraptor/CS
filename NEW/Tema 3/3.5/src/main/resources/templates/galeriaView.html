@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <th:block th:insert="~{fragment.html :: headerfiles}"></th:block>
+    <title>Funnny cat images</title>
+  </head>
+  <body>
+    <th:block th:insert="~{fragment.html :: header}"></th:block>
+    <h1>Galería de Fotos de Gatos Graciosos</h1>
+    <div class="gallery">
+      <img th:src="@{/img/Angy.jpg}" alt="Angy" />
+      <img th:src="@{/img/Washed.jpg}" alt="Washed" />
+      <img th:src="@{/img/Jollycat.jpg}" alt="Jollycat" />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Ejemplos de código</title>
+</head>
+<body>
+  <h1>Página principal</h1>
+  <p>&copy;<span th:text="${fechaActual}">2024</span><br/><br/>
+  
+  
+  Para probar el redirect visita: 
+  <a href="http://localhost:9000/par/0">http://localhost:9000/par/0</a><br/><br/>
+  Para probar si un número es par (y que no haga redirect visita): 
+  <a href="http://localhost:9000/par/4">http://localhost:9000/par/4</a><br/><br/>
+  Para ir a la página de inicio pero con modelAndView: 
+  <a href="http://localhost:9000/menuConModelAndView">http://localhost:9000/menuConModelAndView</a><br/>
+
+
+</body>
+</html>

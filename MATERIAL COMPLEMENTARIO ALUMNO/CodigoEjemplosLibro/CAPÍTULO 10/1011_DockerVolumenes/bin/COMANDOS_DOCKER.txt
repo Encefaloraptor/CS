@@ -1,0 +1,27 @@
+##Crear jar (Maven instalado):
+mvn clean package -DskipTests
+
+##Dockerfile:
+FROM eclipse-temurin:21
+ADD target/ejemplo1011-0.0.1-SNAPSHOT.jar /app.jar
+RUN mkdir h2dbfiles
+ADD h2dbfiles/mydb.mv.db /h2dbfiles
+ENTRYPOINT ["java", "-jar", "/app.jar"]
+
+##Crear imagen:
+docker build -t myimage .  
+
+##Crear volumen:
+docker volume create appvol
+
+##Borrar volumen (si es necesario):
+docker volume rm appvol
+
+##Lanzar contenedor  sobre la imagen y volumen creados:
+docker run --name mycontainer -itp 80:9000 -v appvol:/h2dbfiles myimage
+
+##Probar aplicación (en navegador):
+http://localhost   
+(sin puerto, ya que el puerto host es 80, el puerto por defecto)
+
+

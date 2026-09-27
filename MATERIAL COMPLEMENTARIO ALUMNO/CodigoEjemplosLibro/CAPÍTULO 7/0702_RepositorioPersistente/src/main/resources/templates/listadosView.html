@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Empleado CRUD</title>
+</head>
+
+<body>
+            <h1 th:text="${tituloListado}">Título listado</h1>
+            <table>
+                <thead><tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Salario</th></tr>
+                </thead>
+                <tbody>
+                    <tr th:each="empleado : ${listaEmpleados}">
+                        <td th:text="${empleado.id}">Id</td>
+                        <td><a th:href="@{/{id}(id=${empleado.id})}" th:text="${empleado.nombre}">nombre</a></td>
+                        <td th:text="${empleado.salario}">salario</td>
+                    </tr>
+                </tbody>
+            </table>
+            <a th:href="@{/}">Inicio</a><br />
+</body>
+
+</html>

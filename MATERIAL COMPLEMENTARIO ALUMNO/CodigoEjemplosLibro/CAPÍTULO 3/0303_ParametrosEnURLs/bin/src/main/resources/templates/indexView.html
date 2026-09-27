@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Ejemplos de código</title>
+</head>
+<body>
+  <p>El profesor <span th:text="${profe}">profesor por defecto</span>
+  imparte:<span th:text="${modul}">módulo por defecto</span>
+  </p>
+  
+  
+  Para probar el rescate de parámetros en la parte query visita:<br/>
+  <a href="http://localhost:9000/?profesor=rdf&modulo=programacion">http://localhost:9000/?profesor=rdf&modulo=programacion</a><br/>
+  <a href="http://localhost:9000/v2?profesor=rdf&modulo=programacion">http://localhost:9000/v2?profesor=rdf&modulo=programacion</a><br/>
+  <a href="http://localhost:9000/v3?profesor=rdf&modulo=programacion">http://localhost:9000/v3?profesor=rdf&modulo=programacion</a><br/>
+  <p>Todas ellas muestran lo mismo, pero con diferentes técnicas en el controlador</p>
+</body>
+</html>

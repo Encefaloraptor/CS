@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{/fragmentos.html::cabecera}"></head>
+
+<!-- <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <th:block th:insert="~{fragmentos2.html :: cabecera}"></th:block>
+</head> -->
+
+<body>
+  <h1 th:text="${city}">ciudad por defecto</h1>
+
+
+  Para probar otros "mappings" de este controlador y etiquetas Thymeleaf visita:<br/>
+  <a href="http://localhost:9000/productos">http://localhost:9000/productos</a><br/>
+  <a href="http://localhost:9000/thymeleafExamples">http://localhost:9000/thymeleafExamples</a><br/>
+</body>
+</html>

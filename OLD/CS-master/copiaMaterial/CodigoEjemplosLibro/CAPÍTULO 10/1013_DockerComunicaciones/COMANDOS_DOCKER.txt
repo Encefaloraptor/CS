@@ -1,0 +1,35 @@
+## Crear la red en la que estarán conectados ambos contenedores:
+docker network create --driver=bridge mynetwork
+
+##Crear volumen para MySQL
+docker volume create mysqlvol
+
+##Crear contenedor independiente con MySQL (nombre de base de datos igual al de application.properties)
+docker run --name mysqlcontainer -itp 3306:3306 -e MYSQL_ROOT_PASSWORD=1234 -e MYSQL_DATABASE=mydb -d -v mysqlvol:/var/lib/mysql --network mynetwork mysql
+
+##Comprobar estado de Mysql (opcional)
+docker exec -it mysqlcontainer /bin/bash
+    ## y en la consola:
+    mysqladmin -u root -p status
+    exit
+
+## Ver application.properties
+
+##Crear jar (Maven instalado):
+mvn clean package -DskipTests
+
+##Dockerfile:
+FROM eclipse-temurin:21
+ADD target/ejemplo1013-0.0.1-SNAPSHOT.jar /app.jar
+ENTRYPOINT ["java", "-jar", "/app.jar"]
+
+##Crear imagen:
+docker build -t myimage .  
+
+##Lanzar contenedor sobre la imagen creada, en la red en la que está también el contendor mysql:
+docker run --name mycontainer -e MYSQL_HOST=mysqlcontainer -itp 80:9000  --network mynetwork myimage
+
+##Probar aplicación (en navegador):
+http://localhost   
+(sin puerto, ya que el puerto host es 80, el puerto por defecto)
+

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <nav th:fragment="menu" class="navbar navbar-expand-sm">
+
+            <h1><a class="nav-link active" th:href="@{/}"> Inicio </a>
+            <a class="nav-link active" th:href="@{/datos/titulos}"> Titulos </a>
+            <a class="nav-link active" th:href="@{/datos/enlaces}"> Redes </a>
+            <a class="nav-link active" th:href="@{/datos/fotos}"> Galeria </a></h1>
+        
+    </nav>
+
+    <p>Bienvenido <span th:text="${persona}"></span> a nuestra web </p>
+
+    <p th:text = "${#temporals.format(fecha, 'dd-MM-yyyy HH:mm')}"> </p>
+
+    <p>l Celta de Vigo es un club de fútbol español fundado en 1923 en la ciudad de Vigo, Galicia, fruto de la fusión de dos equipos locales: el Real Vigo Sporting y el Real Fortuna. Juega sus partidos en el Estadio Municipal de Balaídos, con capacidad para más de 29.000 espectadores.
+
+Los colores tradicionales son el celeste y el blanco, de ahí su apodo de “celtiñas” o “celestes”. La afición se conoce como la “afición celeste” o “celtismo”.
+
+Históricamente, el Celta ha tenido etapas de gran protagonismo en Primera División, con momentos destacados como la clasificación para la Liga de Campeones en 2003 y varias participaciones en la Copa de la UEFA/Europa League, alcanzando las semifinales en la temporada 2016/17.
+
+Su máximo rival regional es el Deportivo de La Coruña, con quien disputa el Derbi Gallego, uno de los clásicos más intensos del fútbol español.
+
+El club es reconocido por su cantera, de la que han salido jugadores importantes como Iago Aspas, actual ídolo y capitán, además de otros futbolistas que han dejado huella en el fútbol español e internacional.</p>
+</body>
+</html>

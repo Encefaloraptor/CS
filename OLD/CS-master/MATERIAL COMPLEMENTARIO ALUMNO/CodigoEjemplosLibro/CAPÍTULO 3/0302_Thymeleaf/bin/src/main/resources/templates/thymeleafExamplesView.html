@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{/fragmentos.html::cabecera}"></head>
+
+<!-- <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <th:block th:insert="~{fragmentos2.html :: cabecera}"></th:block>
+</head> -->
+
+<body>
+  <h1 th:text="${city}">ciudad por defecto</h1>
+
+  <p th:text="${#temporals.format( fecha, 'dd-MM-yyyy HH:mm')}">2024—12-31</p>
+
+  <div th:if="${result>10}"> resultado mayor de 10 </div>
+  <div th:unless="${result>10}"> resultado no es mayor de 10 </div>
+
+  <div th:if="${result>10}">
+    <span th:text="${result}">*</span> es mayor de 10
+  </div>
+
+  <div th:unless="${result>10}">
+    <span th:text="${result}">*</span> no es mayor de 10
+  </div>
+
+  <span th:text="${result>10} ? 'Número mayor 10' : 'Número no mayor 10'">*</span>
+
+  <p th:if="${edad > 18 and registrado==true}">Login correcto</p>
+
+  <p th:if="${edad != null or edad < 18}">Usuario no válido</p>
+
+  <p th:if="${not activo}">El usuario no está activo</p>
+
+  <table border="1">
+    <tr th:each="empleado:${listaEmpleados}">
+      <td th:text="${empleado.id}">id</td>
+      <td th:text="${empleado.nombre}">nombre</td>
+      <td th:text="${empleado.email}">email@mail.com</td>
+      <td th:text="${empleado.salario}">0</td>
+    </tr>
+  </table>
+  <br />
+  <table border="1">
+    <tr th:each="empleado, iterador:${listaEmpleados}">
+      <td th:text="${iterador.count}">contador</td>
+      <td th:text="${empleado.nombre}">nombre</td>
+    </tr>
+  </table>
+  <br />
+
+  <table border="1" th:style="${numero>0} ? 'display:block':'display:none'">
+    <tr>
+      <td>11</td>
+      <td>12</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>22</td>
+      <td>23</td>
+    </tr>
+  </table>
+  <br />
+  <span th:classappend="${numero>50}?'highNumber':'lowNumber'" th:text="${numero}">*</span>
+</body>
+
+</html>

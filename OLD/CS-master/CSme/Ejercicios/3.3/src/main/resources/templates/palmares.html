@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejemplos del uso de controladores</title>
+  </head>
+  <body>
+    <h1>Palmarés</h1>
+    <p>Tanto trofeo que no hay ni donde ponerlo</p>
+    <ul>
+      <li th:each="titulo : ${palmares}" th:text="${titulo}"></li>
+    </ul>
+    <div th:replace="~{fragmentos.html::menu}"></div>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <th:block th:insert="~{fragment.html :: header}"></th:block>
+    <title>Usuario</title>
+  </head>
+
+  <body>
+    <h1>Hola, <span th:text="${nombreUsuario}"></span>!</h1>
+  </body>
+</html>

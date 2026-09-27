@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <th:block th:insert="~{fragment.html :: headerfiles}"></th:block>
+    <title>Gatitis</title>
+  </head>
+  <body>
+    <th:block th:insert="~{fragment.html :: header}"></th:block>
+    <p>En estas páginas veremos gatitos graciososos</p>
+ 
+    <!--    <form th:action="@{/usuario}" method="get">
+      <input type="text" name="nombre" />
+      <button type="submit">Enviar</button>
+    </form> -->
+    <footer><span th:text="${anno}">año</span></footer>
+  </body>
+</html>

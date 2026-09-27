@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Relaciones OneToMany-bidirec</title>
+	</head>
+  <body>
+        <h1>Listado de Nominas</h1>
+        <table>
+        	<thead><tr>
+        		<th>ID</th><th>Empleado</th><th>Fecha</th><th>Importe Bruto</th><th>Impuesto</th><th>Importe neto</th>
+            <th>Editar</th><th>Borrar</th></tr>
+        	</thead>
+        	<tbody>
+        		<tr th:each="nomina : ${listaNominas}">
+        			<td th:text="${nomina.id}">Id</td>
+        			<td th:text="${nomina.empleado.nombre}">nom</td>
+        			<td th:text="${nomina.fechaNomina}">*</td>
+        			<td th:text="${nomina.importeBruto}">*</td>
+        			<td th:text="${nomina.porcentImpuestos}">*</td>
+        			<td th:text="${nomina.importeNeto}">*</td>
+                   <td><a th:href="@{/nominas/edit/{id}(id=${nomina.id})}">Editar</a></td>        		
+                    <td><a th:href="@{/nominas/delete/{id}(id=${nomina.id})}">Borrar</a></td>        		
+        		</tr>
+        	</tbody>
+        </table>
+        <p th:if="${msg!=null}">
+          <span th:text="${msg}">err</span>
+        </p>
+      <a th:href="@{/nominas/new}">Nueva Nomina</a><br/>
+      <a th:href="@{/}">Inicio</a>
+    </div>
+  </body>
+</html>

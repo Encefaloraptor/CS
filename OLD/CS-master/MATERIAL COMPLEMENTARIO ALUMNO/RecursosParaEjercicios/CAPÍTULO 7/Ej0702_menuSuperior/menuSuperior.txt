@@ -1,0 +1,6 @@
+<nav th:fragment="menu" class="navbar navbar-dark bg-dark navbar-expand-sm">
+  <ul class="navbar-nav">
+    <li><a class="nav-link active" th:href="@{/}">Cursos</a></li>
+    <li><a class="nav-link active" th:href="@{/autor/}">Autores</a></li>
+  </ul>
+</nav>

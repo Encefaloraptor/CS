@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Ejemplos de código</title>
+</head>
+
+<body>
+  <h1>URL dinámicas</h1>
+
+  URL absoluta:
+  <a th:href="@{http://www.thymeleaf.org/documentation.html}">@{http://www.thymeleaf.org/documentation.html}</a><br /><br />
+
+  URL relativa al contexto:
+  <a th:href="@{/quienes-somos/}">@{/quienes-somos/}</a><br /><br />
+
+  URL relativa al servidor:
+  <a th:href="@{~/quienes-somos/}">@{~/quienes-somos/}</a><br /><br />
+
+  URL relativa a protocolo:
+  <code>&lt;script th:src="@{//cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js}"&gt;&lt;/script&gt;</code>
+  <script th:src="@{//cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js}"></script><br /><br />
+
+  URL con parámetros dinámicos (query):
+  <a th:href="@{/product(id=${myId},size=${mySize})}">/product?id=${myId}&size=${mySize}</a><br /><br />
+
+  URL con parámetros dinámicos (path):
+  <a th:href="@{/product/{id}/{size}(id=${myId},size=${mySize})}">/product/${myId}/{mySize}</a><br /><br />
+
+  URL con JavaScript:<br/>
+  Id:<input id="ident" type="text"><br/>
+  Size:<input id="size" type="text"><br/>
+  <button onclick="enviarEnlace()">Enlace</button>
+  <script>
+    function enviarEnlace() {
+      var txt1 = document.querySelector("#ident").value;
+      var txt2 = document.querySelector("#size").value;
+      window.location.href = "/product/" + txt1 + "/" + txt2;
+    }
+  </script>
+</body>
+
+</html>

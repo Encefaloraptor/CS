@@ -1,0 +1,5 @@
+A diferencia del resto de proyectos de este libro, esta carpeta no contiene una aplicación de servidor,
+es un cliente que consume los endpoints de un proyecto servidor como el mostrado en el ejemplo "0901_ProyectoApiRest".
+
+Para probarlo entonces, hay que ejecutar el proyecto de la carpeta "0901_ProyectoApiRest" y luego
+abrir desde un navegador, el archivo index.html de esta carpeta.

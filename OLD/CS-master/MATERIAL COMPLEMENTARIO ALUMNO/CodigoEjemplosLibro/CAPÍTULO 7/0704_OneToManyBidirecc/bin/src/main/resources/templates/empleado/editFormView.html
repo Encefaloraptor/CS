@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Relaciones OneToMany-bidirec</title>
+	</head>
+  <body>
+    <h1>Editar empleado</h1>
+    <form method="post" action="#" 
+            th:action="@{/editar/{id}/submit(id=${empleadoForm.id})}" 
+            th:object="${empleadoForm}">
+            <input type="text" readonly id="id" th:field="*{id}" /> </label><br/>
+            <label>Nombre:<input type="text" id="nombre" th:field="*{nombre}" /></label><br/>
+            <label>Email:<input type="text" id="email" th:field="*{email}"/></label><br/>
+            <label>Salario:<input type="text" id="salario" th:field="*{salario}" /></label><br/>
+            <label>En Activo:<input type="checkbox" id="enActivo"  th:field="*{enActivo}" ></label><br/>
+            <input type="submit" value="Enviar" />                
+    </form>
+  </body>
+</html>

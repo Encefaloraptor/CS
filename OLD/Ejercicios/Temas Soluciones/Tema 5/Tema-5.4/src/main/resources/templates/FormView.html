@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario Equipo Deportivo</title>
+    <link rel="stylesheet" th:href="@{/css/form.css}" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <th:block th:insert="~{fragments::menu}"></th:block>
+    <div class="form-wrapper">
+      <form
+        action="#"
+        th:action="@{/formulario/submit}"
+        method="post"
+        th:object="${formulario}"
+        enctype="multipart/form-data"
+        class="form-card"
+      >
+        <header class="form-header">
+          <div class="title">
+            <h1>Formulario</h1>
+            <a th:href="@{/}" class="home-link">Inicio</a>
+          </div>
+        </header>
+
+        <div class="form-body">
+          <div class="row">
+            <label class="col col-small">
+              Nombre
+              <input type="text" th:field="*{nombre}" />
+              <span
+                th:classappend="${#fields.hasErrors('nombre')} ? 'cssError'"
+                th:errors="*{nombre}"
+              ></span>
+            </label>
+
+            <label class="col col-small">
+              DNI
+              <input type="text" th:field="*{dni}" />
+              <span
+                th:classappend="${#fields.hasErrors('dni')} ? 'cssError'"
+                th:errors="*{dni}"
+              ></span>
+            </label>
+          </div>
+
+          <div class="row">
+            <label class="col col-large">
+              Email
+              <input type="text" th:field="*{email}" />
+              <span
+                th:classappend="${#fields.hasErrors('email')} ? 'cssError'"
+                th:errors="*{email}"
+              ></span>
+            </label>
+
+            <label class="col col-large">
+              Dirección de envío
+              <input type="text" th:field="*{direccion}" />
+              <span
+                th:classappend="${#fields.hasErrors('direccion')} ? 'cssError'"
+                th:errors="*{direccion}"
+              ></span>
+            </label>
+          </div>
+
+          <div class="row row-center options">
+            <label class="opt">
+              ¿Quiéres una foto firmada?
+              <input type="checkbox" th:field="*{fotoFirmada}" />
+              <span
+                th:classappend="${#fields.hasErrors('fotoFirmada')} ? 'cssError'"
+                th:errors="*{fotoFirmada}"
+              ></span>
+            </label>
+
+            <label class="opt">
+              ¿Quiéres una entrada VIP?
+              <input type="checkbox" th:field="*{entradaVIP}" />
+              <span
+                th:classappend="${#fields.hasErrors('entradaVIP')} ? 'cssError'"
+                th:errors="*{entradaVIP}"
+              ></span>
+            </label>
+
+            <label class="opt">
+              ¿Quiéres una bufanda exclusiva?
+              <input type="checkbox" th:field="*{bufanda}" />
+              <span
+                th:classappend="${#fields.hasErrors('bufanda')} ? 'cssError'"
+                th:errors="*{bufanda}"
+              ></span>
+            </label>
+          </div>
+
+          <div class="row row-center">
+            <label class="opt-full">
+              ¿Aceptas las condiciones de servicio?
+              <input type="checkbox" th:field="*{condiciones}" />
+              <span
+                th:classappend="${#fields.hasErrors('condiciones')} ? 'cssError'"
+                th:errors="*{condiciones}"
+              ></span>
+            </label>
+          </div>
+
+          <div class="row file-row">
+            <label class="col col-file">
+              Adjuntar Carnet de Socio
+              <input type="file" name="file" required />
+              <span
+                th:classappend="${#fields.hasErrors('nombreFicheroString')} ? 'cssError'"
+                th:errors="*{nombreFicheroString}"
+              ></span>
+            </label>
+
+            <div class="col col-btn"></div>
+          </div>
+          <div class="row row-bottom">
+            <div class="col-bottom">
+              <button type="submit" class="btn-submit">
+                Enviar Formulario
+              </button>
+            </div>
+          </div>
+          <div th:if="${resultado} != null">
+            <p
+              th:text="${resultado}"
+              th:classappend="${exito} ? 'enviado' : 'error'"
+            ></p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

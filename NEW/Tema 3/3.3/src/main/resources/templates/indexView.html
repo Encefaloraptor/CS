@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <html xmlns:th="http://www.thymeleaf.org" />
+    <link th:href="@{/CSS/bootstrap.min.css}" rel="stylesheet" />
+    <th:block th:insert="~{fragment.html :: header}"></th:block>
+    <title>Gatitis</title>
+  </head>
+  <body>
+    <p>En estas páginas veremos gatitos graciososos</p>
+
+    <footer><span th:text="${anno}">año</span></footer>
+  </body>
+</html>

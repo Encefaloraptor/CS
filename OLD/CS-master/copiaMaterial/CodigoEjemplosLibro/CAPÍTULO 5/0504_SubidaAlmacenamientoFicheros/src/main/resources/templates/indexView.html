@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Envío ficheros</title>
+  </head>
+  <body>
+        <h1>Listado de clientes con su foto</h1>
+        <table border="1px">
+        	<thead>
+        		<tr>
+        			<th>ID</th><th>Nombre</th><th>Imagen</th><th>Borrar</th></tr>
+        	</thead>
+        	<tbody>
+        		<tr th:each="form, iterador : ${forms}">
+        			<td th:text="${iterador.count}">nombre</td>
+        			<td th:text="${form.nombre}">nombre</td>
+        			<td><img th:src="'/files/'+${form.imagen}" width="64px"/></td>    		
+              <td><a th:href="@{/delete/{id}(id=${iterador.count})}">Borrar</a></td>        		
+        		</tr>
+        	</tbody>
+        </table>
+        <a th:href="@{/new}">Nuevo elemento</a>
+        <p style="color:red;" th:text="${txtErr}">texto error I/O</p>
+  </body>
+</html>
+

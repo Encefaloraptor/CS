@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RestClient</title>
+  </head>
+  <body>
+    <h1>Test de API</h1>
+    <h2>Consulta de tareas</h2>
+    <a href="/lista"> http://localhost:9000/lista</a><br/>
+    <h2>Consulta tarea con  id 3</h2>
+    <a href="/get/3"> http://localhost:9000/get/3</a><br/>
+    <h2>Nueva tarea</h2>
+    <form action="/add" method="post" th:action="@{/nuevo}" th:object="${todo}">
+      <input type="text" name="title" placeholder="Título de la tarea">
+      <input type="text" name="userId" placeholder="Id del usuario">
+      <input type="text" name="completed" placeholder="Completada (true/false)">
+      <input type="submit" value="Añadir tarea">
+    </form>
+  </body>
+</html>

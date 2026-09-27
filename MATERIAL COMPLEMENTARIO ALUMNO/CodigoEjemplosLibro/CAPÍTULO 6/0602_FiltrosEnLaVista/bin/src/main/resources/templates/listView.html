@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Empleado CRUD</title>
+</head>
+
+<body>
+  <h1>Listado de empleados</h1>
+
+  <form method="post" action="#" th:action="@{/findByName}" th:object="${findForm}">
+    <label>Buscar por nombre:
+      <input type="text" th:field="*{nombre}" /></label>
+    <input type="submit" value="Buscar" />
+  </form>
+  <br/>
+  Seleccionar género:
+  <select id="genero" onChange="changeGenero();">
+  <option value="">Todos</option>             
+  <option
+    th:each="gen : ${T(com.example.myapp.domain.Genero).values()}"  
+    th:value="${gen}" th:text="${gen}"
+    th:selected="${gen} == ${generoSeleccionado} ? true : false">
+  </option>
+</select>
+<script>
+  function changeGenero(){
+     const select = document.getElementById("genero");
+     if (select.value == "") window.location.href = "/";
+     else window.location.href = "/findByGenero/"+select.value;
+  }
+</script>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Salario</th>
+        <th>En Activo</th>
+        <th>Genero</th></tr>
+    </thead>
+    <tbody>
+      <tr th:each="empleado : ${listaEmpleados}">
+        <td th:text="${empleado.id}">3</td>
+        <td th:text="${empleado.nombre}">Ana</td>
+        <td th:text="${empleado.email}">ana@mail.com</td>
+        <td th:text="${empleado.salario}">30000</td>
+        <td th:text="${empleado.enActivo}">true</td>
+        <td th:text="${empleado.genero}">FEMENINO</td>
+      </tr>
+    </tbody>
+  </table>
+  <a th:href="@{/}">Reestablecer filtros</a>
+</body>
+
+</html>

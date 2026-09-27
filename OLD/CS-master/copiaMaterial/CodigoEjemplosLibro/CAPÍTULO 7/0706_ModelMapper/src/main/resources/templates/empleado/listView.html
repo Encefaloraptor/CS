@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uso DTO</title> 	
+  </head>
+  <body>
+        <h1>Listado de empleados</h1>
+        <table>
+        	<thead><tr>
+        	  <th>ID</th><th>Nombre</th>
+            <th>Depto</th><th>Editar</th><th>Borrar</th></tr>
+        	</thead>
+        	<tbody>
+        		<tr th:each="empleadoDTO : ${listaEmpleados}">
+        			<td th:text="${empleadoDTO.id}">Id</td>
+              <td th:text="${empleadoDTO.nombre}">nombre</td>
+        			<td th:text="${empleadoDTO.departamentoNombre}">depto</td>
+              <td><a th:href="@{/edit/{id}(id=${empleadoDTO.id})}">Editar</a></td>        		
+              <td><a th:href="@{/delete/{id}(id=${empleadoDTO.id})}">Borrar</a></td>        		
+        		</tr>
+        	</tbody>
+        </table>
+      <a th:href="@{/new}">Nuevo empleado</a><br/>
+      <a th:href="@{/depto/}">Departamentos</a>
+  </body>
+</html>

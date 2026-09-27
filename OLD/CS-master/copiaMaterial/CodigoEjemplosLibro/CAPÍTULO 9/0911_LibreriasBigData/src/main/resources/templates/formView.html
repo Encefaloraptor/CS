@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Árboles de decisión</title>
+  </head>
+  <body>
+  <h2>Predicción de diabetes</h2>
+  <form action="#" th:action="@{/prediction}" th:object="${patientForm}" method="post">
+      <label>Número de embarazos (0-20):</label>
+      <input type="number" th:field="*{embarazos}" min="0" max="20"/><br/>
+
+      <label>Glucosa (1-200):</label>
+      <input type="number" th:field="*{glucosa}" min="1" max="200"/><br/>
+
+      <label>Presión Sangre (0-140):</label>
+      <input type="number" th:field="*{presionSangre}" min="0" max="140"/><br/>
+
+      <label>Grosor de la piel (0-100):</label>
+      <input type="number" th:field="*{grosorPiel}" min="0" max="100"/><br/>
+
+      <label>Insulina (0-900):</label>
+      <input type="number" th:field="*{insulina}" min="0" max="900"/><br/>
+
+      <label>Índice de masa corporal  (0-80):</label>
+      <input type="number" th:field="*{indiceMasaCorporal}" min="0" max="80"/><br/>
+      
+      <label>Herencia  (0-2 con decimales):</label>
+      <input type="text" th:field="*{herencia}" min="0" max="2"/><br/>
+
+      <label>Edad (18-100):</label>
+      <input type="number" th:field="*{edad}" min="0" max="100"/><br/>
+      <button type="submit">Calcular predicción</button>
+  </form>
+  </body>
+</html>

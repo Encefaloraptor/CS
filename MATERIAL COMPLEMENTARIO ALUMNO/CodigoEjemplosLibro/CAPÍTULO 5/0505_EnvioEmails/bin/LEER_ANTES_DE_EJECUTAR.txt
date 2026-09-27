@@ -1,0 +1,6 @@
+Este proyecto hace envío de emails a través de gmail, por lo que para ejecutarlo correctamente,
+hay que tener un cuenta de correo de gmail correctemente configurada, esto es, con la autentificación
+en dos pasos activada y con una contraseña de aplicaciones generada.
+
+En el fichero /resources/application.properties debes específicar esa cuenta de correo y la 
+contraseña da aplicaciones. Ojo: no es la contraseña del usuario!
