@@ -1,12 +1,13 @@
 package com.example.ejercicios_tema_2.controller;
 
-import com.example.ejercicios_tema_2.service.CalculadoraService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.example.ejercicios_tema_2.service.CalculadoraService;
 
 @Controller
 @RequestMapping("/calculator")
@@ -14,7 +15,6 @@ public class CalculadoraController {
 
     @Autowired
     CalculadoraService calculadoraService;
-
 
     @GetMapping("/home")
     public String getHomePage(Model model) {

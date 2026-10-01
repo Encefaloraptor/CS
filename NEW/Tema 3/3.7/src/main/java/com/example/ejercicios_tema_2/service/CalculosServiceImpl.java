@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CalculosServiceImpl implements CalculosService {
+public class CalculosServiceImpl implements CalculosInterface {
 
     @Override
     public Double hipotenusa(String cateto1String, String cateto2String) {

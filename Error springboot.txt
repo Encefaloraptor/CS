@@ -1,0 +1,17 @@
+[Running] cd "d:\Clases\CS\NEW\Tema 3\3.7\src\main\java\com\example\ejercicios_tema_2\" && javac EjerciciosTema2Application.java && java EjerciciosTema2Application
+EjerciciosTema2Application.java:3: error: package org.springframework.boot does not exist
+import org.springframework.boot.SpringApplication;
+                               ^
+EjerciciosTema2Application.java:4: error: package org.springframework.boot.autoconfigure does not exist
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+                                             ^
+EjerciciosTema2Application.java:6: error: cannot find symbol
+@SpringBootApplication
+ ^
+  symbol: class SpringBootApplication
+EjerciciosTema2Application.java:10: error: cannot find symbol
+		SpringApplication.run(EjerciciosTema2Application.class, args);
+		^
+  symbol:   variable SpringApplication
+  location: class EjerciciosTema2Application
+4 errors

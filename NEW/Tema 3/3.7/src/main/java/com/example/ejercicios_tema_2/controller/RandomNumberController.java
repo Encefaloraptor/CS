@@ -1,8 +1,5 @@
 package com.example.ejercicios_tema_2.controller;
 
-import java.util.LinkedHashSet;
-import java.util.Random;
-import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
