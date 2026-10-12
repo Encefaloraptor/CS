@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Depor</title>
+    <style>
+      .menu {  float: left;   margin: 1em; }
+    
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 10px;
+      padding: 10px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+  </head>
+<body>
+  <ul>
+    <li class="menu"><a th:href="@{/}">Home</a></li>
+    <li class="menu"><a th:href="@{/palmares}">Palmarés</a></li>
+    <li class="menu"><a th:href="@{/galeria-fotos}">Galería de fotos</a></li>
+    <li class="menu"><a th:href="@{/enlaces}">Enlaces externos</a></li>
+  </ul>       
+  <br/><br/>   
+  <h1>Fotos</h1>
+  <div class="gallery">
+    <img th:src="@{/images/depor-galeria1.png}" alt="depor-galeria1"/>
+    <img th:src="@{/images/depor-galeria2.png}" alt="depor-galeria2"/>
+    <img th:src="@{/images/depor-galeria3.png}" alt="depor-galeria3"/>
+    <img th:src="@{/images/depor-galeria4.png}" alt="depor-galeria4"/>
+  </div>
+</body>
+</html>

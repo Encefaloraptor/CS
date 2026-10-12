@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+
+<body>
+    <h1>Divisores</h1>
+    <span th:each="numero:${numeros}">
+        <!-- se crea un enlace a la ruta /calculos/divisores/{n} donde n es el número actual --> 
+        <a th:href="@{/calculos/divisores/{n}(n=${numero})}">   
+            <!-- se muestra el número actual y la ? es un placeholder para el número--> 
+            <span th:text="${numero}">?</span>    </a> <br/>    
+    </span>
+</body>
+</html>

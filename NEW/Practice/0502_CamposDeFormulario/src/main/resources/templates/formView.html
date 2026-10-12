@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test</title>
+  </head>
+
+  <body>
+    <form
+      action="#"
+      method="post"
+      th:action="@{/myForm/submit}"
+      th:object="${formInfo}"
+    >
+      <label
+        >Nombre:
+        <input type="text" name="nombre" value="Introduce nombre" /></label
+      ><br />
+
+      <label
+        >Fecha de nacimiento (AAAA-MM-DD):
+        <input type="text" th:field="*{fechaNacimiento}" /></label
+      ><br />
+
+      <br />Seleccione el estado civil:<br />
+      <label
+        ><input
+          type="radio"
+          name="button1"
+          value="1"
+          th:field="*{estadoCivil}"
+        />Soltero</label
+      ><br />
+      <label
+        ><input
+          type="radio"
+          name="button1"
+          value="2"
+          th:field="*{estadoCivil}"
+        />Casado</label
+      ><br />
+      <label
+        ><input
+          type="radio"
+          name="button1"
+          value="3"
+          th:field="*{estadoCivil}"
+        />Otro</label
+      ><br />
+
+      <br />Seleccione género:<br />
+      <div th:each="genero : ${T(com.example.myapp.Genero).values()}">
+        <input
+          type="radio"
+          name="button1"
+          th:value="${genero}"
+          th:text="${genero}"
+          th:field="*{generoPersona}"
+        />
+      </div>
+
+      <select th:field="*{generoPersona}">
+        <option value="">Seleccione un valor</option>
+        <option
+          th:each="genero : ${T(com.example.myapp.Genero).values()}"
+          th:value="${genero}"
+          th:text="${genero}"
+        ></option>
+      </select>
+
+      <br />Seleccione el curso:<br />
+      <select name="curso" size="3">
+        <option value="1" selected>Primero</option>
+        <option value="2">Segundo</option>
+        <option value="3">Prácticas</option>
+      </select>
+      <br />
+
+      <br />
+      Seleccione la provincia de nacimiento:<br />
+      <select th:field="*{provinciaNacimiento}">
+        <option value="0">seleccione una opción</option>
+        <!--opc.por defecto-->
+        <option
+          th:each="provin:${listaProvincias}"
+          th:value="${provin.id}"
+          th:text="${provin.nombre}"
+        ></option>
+      </select>
+      <br /><br />
+
+      <label
+        >Acepto las condiciones de servicio:<input
+          type="checkbox"
+          th:field="*{acepto}"
+      /></label>
+      <br />
+
+      <input type="submit" value="Enviar" />
+    </form>
+  </body>
+</html>

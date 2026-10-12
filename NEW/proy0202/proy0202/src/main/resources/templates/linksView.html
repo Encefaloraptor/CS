@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depor</title>
+    <style>
+      .menu {  float: left;   margin: 1em; }
+  </style>
+  </head>
+<body>
+  <ul>
+    <li class="menu"><a th:href="@{/}">Home</a></li>
+    <li class="menu"><a th:href="@{/palmares}">Palmarés</a></li>
+    <li class="menu"><a th:href="@{/galeria-fotos}">Galería de fotos</a></li>
+    <li class="menu"><a th:href="@{/enlaces}">Enlaces externos</a></li>
+  </ul>   
+  <br/><br/>             
+
+  <h1>Enlaces de interés</h1>
+  <ul>
+    <li><a href="https://www.rcdeportivo.es/">https://www.rcdeportivo.es/</li>
+    <li><a href="https://es.wikipedia.org/wiki/Real_Club_Deportivo_de_La_Coru%C3%B1a">https://es.wikipedia.org/wiki/Real_Club_Deportivo_de_La_Coruña</li>
+    <li><a href="https://twitter.com/rcdeportivo?lang=es">https://twitter.com/rcdeportivo?lang=es</li>
+  </ul>
+</body>
+</html>

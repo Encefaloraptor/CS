@@ -1,4 +1,7 @@
 {
+  "code-runner.executorMap": {
+    "java": "d=$dir; while [ ! -f \"$d/pom.xml\" ] && [ \"$d\" != \"/\" ]; do d=$(dirname \"$d\"); done; if [ -f \"$d/pom.xml\" ]; then cd \"$d\" && mvn spring-boot:run; else cd $dir && javac $fileName && java $fileNameWithoutExt; fi"
+  },
   "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx4G -Xms100m -Xlog:disable",
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",
@@ -39,10 +42,7 @@
   "C_Cpp_Runner.compilerArgs": [],
   "C_Cpp_Runner.linkerArgs": [],
   "C_Cpp_Runner.includePaths": [],
-  "C_Cpp_Runner.includeSearch": [
-    "*",
-    "**/*"
-  ],
+  "C_Cpp_Runner.includeSearch": ["*", "**/*"],
   "C_Cpp_Runner.excludeSearch": [
     "**/build",
     "**/build/**",

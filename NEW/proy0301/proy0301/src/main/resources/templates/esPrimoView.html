@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<body>
+<p> el numero introducido 
+    <!-- si el resultado es false, se muestra "no", si no, se muestra "sí" -->
+    <span th:if="${result==false}">
+        <span th:text=" no "></span>    
+    </span>
+    <span th:unless="${result==false}">
+        <span th:text=" sí "></span>    
+    </span>
+    es primo.
+</p>
+    
+</body>
+</html>
+

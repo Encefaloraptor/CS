@@ -28,5 +28,4 @@ public class MatematicasService {
     public void removeNumber(int num) {
         numbers.remove(num);
     }
-
 }

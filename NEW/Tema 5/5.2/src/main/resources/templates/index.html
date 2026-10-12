@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora de fechas</title>
+  </head>
+  <body>
+    <form method="post" th:action="@{/myForm/submit}" th:object="${formInfo}">
+      <label for="fecha1">Primera fecha</label>
+      <input type="date" id="fecha1" th:field="*{fecha1}" required />
+      <p th:if="${#fields.hasErrors('fecha1')}" th:errors="*{fecha1}"></p>
+      <label for="fecha2">Segunda fecha</label>
+      <input type="date" id="fecha2" th:field="*{fecha2}" required />
+      <p th:if="${#fields.hasErrors('fecha2')}" th:errors="*{fecha2}"></p>
+      <fieldset>
+        <legend>¿Qué te gustaría calcular?</legend>
+        <button type="submit" name="operation" value="days">Días entre fechas</button>
+        <button type="submit" name="operation" value="leapYears">Listar años bisiestos</button>
+        <button type="submit" name="operation" value="sundays">Contar domingos 1 de enero</button>
+      </fieldset>
+      <div th:if="${operation == 'days'}">
+        <p>Días entre fechas: <span th:text="${daysResult}"></span></p>
+      </div>
+      <div th:if="${operation == 'leapYears'}">
+        <p>Años bisiestos: <span th:text="${leapYearsResult}"></span></p>
+      </div>
+      <div th:if="${operation == 'sundays'}">
+        <p>Domingos 1 de enero: <span th:text="${sundaysResult}"></span></p>
+      </div>
+      <p th:if="${operationError}" th:text="${operationError}"></p>
+    </form>
+  </body>
+</html>
