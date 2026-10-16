@@ -21,25 +21,35 @@
     <table>
       <tr>
         <td>
-          <a th:href="@{/voto?foto=0}"
-            ><img
-              src="images/Bloom.jpg"
-              alt="Bloom into you"
-              style="width: 200px"
-          /></a>
+          <img
+            src="images/Bloom.jpg"
+            alt="Bloom into you"
+            style="width: 200px" />
+
+          <RadioButton
+            Id=""
+            text="Voto:"
+            DataValueField="@{/voto?foto=0}"
+            Name="voto" />
         </td>
         <td>
-          <a th:href="@{/voto?foto=1}"
-            ><img
-              src="images/Silent.jpg"
-              alt="Secrets of a silent witch"
-              style="width: 200px"
-          /></a>
+          <img
+            src="images/Silent.jpg"
+            alt="Secrets of a silent witch"
+            style="width: 200px" />
+          <RadioButton
+            Id=""
+            text="Voto:"
+            DataValueField="@{/voto?foto=1}"
+            Name="voto" />
         </td>
         <td>
-          <a th:href="@{/voto?foto=2}"
-            ><img src="images/Watanare.jpg" alt="Watanare" style="width: 200px"
-          /></a>
+          <img src="images/Watanare.jpg" alt="Watanare" style="width: 200px" />
+          <RadioButton
+            Id=""
+            text="Voto:"
+            DataValueField="@{/voto?foto=2}"
+            Name="voto" />
         </td>
 
         <!-- suponiendo que las fotos fuesen dinámicas y llegasen del servidor -->
@@ -47,7 +57,6 @@
       <a th:href="@{'/voto?foto='+${iter.index}}">
         <img th:src="${'images/'+img}" style="width:200px;"></a>
     </td> -->
-    
       </tr>
       <tr>
         <td th:each="voto :${votosFoto}">
@@ -55,6 +64,12 @@
           <span th:text="${voto}">*</span>
         </td>
       </tr>
+      <label for="email"> Su email: </label>
+      <span> 
+        
+      
+      </Email> 
+       </span>
     </table>
 
     <p class="alert alert-danger" th:if="${txtErr!=null}">Voto invalido</p>

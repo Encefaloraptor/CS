@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <div th:insert="~{fragments/navBar :: navBar}"></div>
+
+    <main>
+      <p>
+        Primer operando =>
+        <span
+          th:text="${firstNumber}"
+          th:class="${firstNumber == null} ? 'oculto' : ''"
+        ></span>
+      </p>
+      <p>
+        Segundo operando =>
+        <span
+          th:text="${secondNumber}"
+          th:class="${secondNumber == null} ? 'oculto' : ''"
+        ></span>
+      </p>
+      <p>
+        Resultado =>
+        <span
+          th:text="${result}"
+          th:class="${result == null} ? 'oculto' : ''"
+        ></span>
+      </p>
+
+      <table>
+        <tr>
+          <td><a th:href="@{/calculator/insert-number/1}">1</a></td>
+          <td><a th:href="@{/calculator/insert-number/2}">2</a></td>
+          <td><a th:href="@{/calculator/insert-number/3}">3</a></td>
+        </tr>
+        <tr>
+          <td><a th:href="@{/calculator/insert-number/4}">4</a></td>
+          <td><a th:href="@{/calculator/insert-number/5}">5</a></td>
+          <td><a th:href="@{/calculator/insert-number/6}">6</a></td>
+        </tr>
+        <tr>
+          <td><a th:href="@{/calculator/insert-number/7}">7</a></td>
+          <td><a th:href="@{/calculator/insert-number/8}">8</a></td>
+          <td><a th:href="@{/calculator/insert-number/9}">9</a></td>
+        </tr>
+        <tr>
+          <td><a th:href="@{/calculator/cambiar-operando/suma}">+</a></td>
+          <td><a th:href="@{/calculator/insert-number/0}">0</a></td>
+          <td><a th:href="@{/calculator/limpiar}">Clear</a></td>
+        </tr>
+        <tr>
+          <td><a th:href="@{/calculator/cambiar-operando/resta}">-</a></td>
+          <td colspan="2"><a th:href="@{/calculator/resultado}">=</a></td>
+        </tr>
+      </table>
+    </main>
+  </body>
+</html>

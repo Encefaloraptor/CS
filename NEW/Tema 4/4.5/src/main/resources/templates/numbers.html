@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <div th:insert="~{fragments/navBar :: navBar}"></div>
+
+    <main>
+      <h1>Lista de Números Aleatorios</h1>
+
+      <div class="actions">
+        <a th:href="@{/random-numbers/new}" class="btn">Generar Número Aleatorio</a>
+        <p>Total de números: <span th:text="${totalNumbers}">0</span></p>
+      </div>
+
+      <table class="numbers-table">
+        <thead>
+          <tr>
+            <th>Número</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="number, iterStat : ${numbers}">
+            <td
+              th:text="${number}"
+              th:class="${number < 50} ? 'fondo-verde' : 'fondo-rojo'"
+            >
+              número
+            </td>
+            <td>
+              <a
+                th:href="@{/random-numbers/delete/{number}(number=${number})}"
+                class="btn-delete"
+              >
+                Eliminar
+              </a>
+            </td>
+          </tr>
+          <tr th:if="${#lists.isEmpty(numbers)}">
+            <td colspan="3" class="no-data">No hay números generados aún</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>

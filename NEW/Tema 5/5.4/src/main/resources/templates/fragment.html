@@ -1,0 +1,23 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head th:fragment="headerfiles">
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <html xmlns:th="http://www.thymeleaf.org" />
+      <link th:href="@{/CSS/bootstrap.min.css}" rel="stylesheet" />
+    </div>
+  </head>
+  <body>
+    <div th:fragment="header">
+    <div> <h1>Hola, <span th:text="${nombreUsuario}">bienvenido</span>!</h1></div>
+      <nav th:fragment="menu">
+        <a class="nav-link active" th:href="@{/}">Home</a>
+        <a class="nav-link active" th:href="@{/funnycats}">Gatitos graciosos</a>
+        <a class="nav-link active" th:href="@{/galeria}">Galería de fotos</a>
+        <a class="nav-link active" th:href="@{/enlaces}">Enlaces</a>
+        <a class="nav-link active" th:href="@{/usuario}">Usuario</a>
+      </nav>
+      
+    </div>
+  </body>
+</html>
