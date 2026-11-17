@@ -1,0 +1,20 @@
+-------------------------------------------------------------------------------
+Test set: com.demo.myapp.services.CalculosServiceTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.541 s <<< FAILURE! -- in com.demo.myapp.services.CalculosServiceTest
+com.demo.myapp.services.CalculosServiceTest.esPrimoTest -- Time elapsed: 0.019 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <java.lang.IllegalArgumentException> but was: <java.lang.RuntimeException>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:67)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3115)
+	at com.demo.myapp.services.CalculosServiceTest.esPrimoTest(CalculosServiceTest.java:25)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: java.lang.RuntimeException: El número no puede ser negativo
+	at com.demo.myapp.services.CalculosServiceImpl.esPrimo(CalculosServiceImpl.java:13)
+	at com.demo.myapp.services.CalculosServiceTest.lambda$esPrimoTest$0(CalculosServiceTest.java:25)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:53)
+	... 6 more
+

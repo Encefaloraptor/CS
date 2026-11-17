@@ -1,0 +1,29 @@
+tr,
+td {
+  border: 1px solid black;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+}
+
+.fondo-verde {
+  background-color: rgb(142, 236, 0);
+  color: rgb(0, 104, 0);
+}
+
+.fondo-rojo {
+  background-color: rgb(255, 161, 161);
+  color: rgb(136, 0, 0);
+}
+
+nav {
+  background-color: aquamarine;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 25px;
+}
+
+.oculto {
+  display: none;
+}

@@ -5,6 +5,12 @@
       "type": "java",
       "name": "EjerciciosTema2Application",
       "request": "launch",
+      "mainClass": "com.example.ejercicios_tema_2.EjerciciosTema2Application"
+    },
+    {
+      "type": "java",
+      "name": "EjerciciosTema2Application",
+      "request": "launch",
       "mainClass": "com.example.ejercicios_tema_2.EjerciciosTema2Application",
       "projectName": "com.example-ejercicios_tema_2"
     },

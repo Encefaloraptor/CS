@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elige tu película favorita</title>
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/webjars/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <style> 
+        td { border: 1px solid #ddd; } 
+        .cssError { color: red; }
+    </style>
+</head>
+<body>
+<h1>Elige tu película favorita</h1>
+<form action="#" method="POST" th:action="@{/}" th:object="${formVoto}">
+    <table>
+    <tr>
+        <td><img src="images/chihiro.jpg" alt="El viaje de Chihiro" style="width:200px;"></td>
+        <td><img src="images/howls.jpg" alt="El castillo ambulante" style="width:200px;"></td>
+        <td><img src="images/totoro.jpg" alt="Mi vecino Totoro" style="width:200px;"></td>
+    </tr>
+    <tr>
+        <td th:each="vote:${votes}">
+            <i class="bi bi-heart"></i><span th:text="${vote}">0</span>
+        </td>
+    </tr>
+    <tr>
+        <td><label><input type="radio" name="movieIndex" value="0" th:field="*{movieIndex}">Voto</label></td>
+        <td><label><input type="radio" name="movieIndex" value="1" th:field="*{movieIndex}">Voto</label></td>
+        <td><label><input type="radio" name="movieIndex" value="2" th:field="*{movieIndex}">Voto</label></td>
+    </tr>
+<tr>
+    <td colspan="3">
+        <span class="cssError" th:if="${#fields.hasErrors('movieIndex')}" th:errors="*{movieIndex}"></span>
+    </td>
+</tr>
+<tr>
+    <td><label>Su email: <input type="text" th:field="*{email}"></label></td>
+    <td colspan="2"><button type="submit">Votar</button></td>
+</tr>
+<tr>
+    <td colspan="3">
+        <span class="cssError" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+        <span class="cssError" th:if="${errorMsg}" th:text="${errorMsg}"></span>
+    </td>
+</tr>
+</table>
+</form>
+</body>
+</html>

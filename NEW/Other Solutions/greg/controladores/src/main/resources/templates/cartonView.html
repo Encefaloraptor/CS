@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/estilos.css}">
+</head>
+<body>
+    <div th:if="${numerosOK and mayores50OK}">
+        <ul th:if="${tamano > 0}">
+            <li th:each="numero:${listaCarton}">
+                <a th:href="@{delete/{numero}(numero=${numero}, numeros=${numeros}, mayores50=${mayores50})}">
+                    <span th:text="${numero}"></span>
+                </a>
+            </li>
+        </ul>
+        <ul th:unless="${tamano > 0}">
+            <h1>Bingo!</h1>
+        </ul>
+        <a class="nuevo" th:href="@{nuevo(numeros=${numeros}, mayores50=${mayores50})}">Nuevo cartón</a>
+    </div>
+</body>
+</html>

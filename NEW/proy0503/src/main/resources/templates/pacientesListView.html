@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Consulta Médica</title>
+    <link rel="stylesheet" th:href="@{/css/estilos.css}" href="/css/estilos.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="header-wrapper">
+          <div>
+            <h1>Consulta médica</h1>
+            <p class="subtitle">Gestión y control de cola de pacientes</p>
+          </div>
+          <div class="actions-bar">
+            <a th:href="@{/newPaciente}" href="/newPaciente" class="btn btn-primary">+ Nuevo paciente</a>
+            <a th:href="@{/delete}" href="/delete" class="btn btn-secondary">Llamar a consulta</a>
+          </div>
+        </div>
+
+        <div class="table-container">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>DNI</th>
+                <th>Nombre</th>
+                <th>Fecha Nacimiento</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr th:each="paciente : ${listaPacientes}">
+                <td th:text="${paciente.dni}">12345678A</td>
+                <td th:text="${paciente.nombre}">Juan Pérez</td>
+                <td>
+                  <span class="date-badge"
+                        th:if="${paciente.fechaNacimiento != null}"
+                        th:text="${#temporals.format(paciente.fechaNacimiento, 'dd/MM/yyyy')}">01/01/1990</span>
+                  <span th:if="${paciente.fechaNacimiento == null}">-</span>
+                </td>
+              </tr>
+              <tr th:if="${#lists.isEmpty(listaPacientes)}">
+                <td colspan="3" class="empty-state">No hay pacientes en espera en la consulta actualmente.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div th:if="${factura != null and factura != 0}" class="alert-factura">
+          <div class="factura-title">Atención finalizada - Importe a abonar:</div>
+          <div class="factura-monto"><span th:text="${#numbers.formatDecimal(factura, 1, 2)}">0.00</span> €</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

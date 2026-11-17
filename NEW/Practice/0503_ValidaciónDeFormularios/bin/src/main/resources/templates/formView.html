@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Ejemplo de validación de formularios</title>
+   <style>.cssError{ background-color:red; }</style>
+</head>
+<body>
+   <form action="#" method="post" th:action="@{/myForm/submit}" 
+         th:object="${formInfo}">
+         
+      <div th:classappend="${#fields.hasErrors('id')} ? 'cssError'">           
+         <label>Id (num>0): <input type="text" th:field="*{id}"></label>
+      </div> 
+      
+      <label>Nombre (no vacío): <input type="text" th:field="*{nombre}"></label><br/>
+      
+      <div th:classappend="${#fields.hasErrors('email')} ? 'cssError'">
+         <label>Email:<input type="text" id="email" th:field="*{email}"/></label>
+         <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="cssError">texto error</span> 
+      </div>       
+           
+      <label>Fecha Nacim  (AAAA-MM-DD anterior a hoy): <input type="text" th:field="*{fechaNacimiento}"></label><br/>
+      
+      <label>Salario: <input type="text" th:field="*{salario}"></label><br/>  
+      
+      <input type="submit" value="Enviar"/>       
+   </form>
+</body>
+</html>

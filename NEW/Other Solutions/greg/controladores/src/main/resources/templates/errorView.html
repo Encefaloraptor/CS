@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+</head>
+<body>
+    <h1>No se puede iniciar</h1>
+    <h2>Ha ocurrido un error</h2>
+    <p th:text="${errorMsg}">Revisa los parámetros de la partida e inténtalo de nuevo</p>
+    <a th:href="@{/}">Volver al inicio</a>
+</body>
+</html>
